@@ -11,6 +11,10 @@ export default class App extends React.Component {
     selectedVideo: null
   };
 
+  componentDidMount() {
+    this.onSearchSubmit("");
+  }
+
   onSearchSubmit = async term => {
     const SEARCH_VIDEOS_ENDPOINT = "/search";
 
