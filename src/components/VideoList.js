@@ -8,6 +8,6 @@ export default class VideoList extends React.Component {
       return <VideoItem key={video.videoId} video={video} />;
     });
 
-    return <div className="video-list">{videos}</div>;
+    return <div className="ui relaxed divided list">{videos}</div>;
   }
 }
