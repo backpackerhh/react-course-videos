@@ -2,6 +2,7 @@ import React from "react";
 
 import youtube from "../api/youtube";
 import SearchBar from "./SearchBar";
+import VideoDetail from "./VideoDetail";
 import VideoList from "./VideoList";
 
 export default class App extends React.Component {
@@ -30,10 +31,21 @@ export default class App extends React.Component {
     return (
       <div className="ui container" style={{ marginTop: "10px" }}>
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <VideoList
-          videos={this.state.videos}
-          onVideoSelect={this.onVideoSelect}
-        />
+
+        <div className="ui grid">
+          <div className="ui row">
+            <div className="eleven wide column">
+              <VideoDetail video={this.state.selectedVideo} />
+            </div>
+
+            <div className="five wide column">
+              <VideoList
+                videos={this.state.videos}
+                onVideoSelect={this.onVideoSelect}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
